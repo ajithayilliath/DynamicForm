@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        My Preferance
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+        <ion-card>
+                <ion-card-header>
+                  Explore Nearby
+                </ion-card-header>
+              
+                <ion-list>
+                  <button ion-item>
+                    <ion-icon name="cart" item-start></ion-icon>
+                    Shopping
+                  </button>
+              
+                  <button ion-item>
+                    <ion-icon name="medical" item-start></ion-icon>
+                    Hospital
+                  </button>
+              
+                  <button ion-item>
+                    <ion-icon name="cafe" item-start></ion-icon>
+                    Cafe
+                  </button>
+              
+                  <button ion-item>
+                    <ion-icon name="paw" item-start></ion-icon>
+                    Dog Park
+                  </button>
+              
+                  <button ion-item>
+                    <ion-icon name="beer" item-start></ion-icon>
+                    Pub
+                  </button>
+              
+                  <button ion-item>
+                    <ion-icon name="planet" item-start></ion-icon>
+                    Space
+                  </button>
+              
+                </ion-list>
+              </ion-card>
+              <ion-list no-lines>
+                  <button ion-item *ngFor ="let city of cities" (click)="itemSelected(item)">
+                      {{city}}
+                  </button>
+              </ion-list>
+              <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+              <ion-list>
+                  <ion-item *ngFor="let city of cities">
+                      {{city}}
+                  </ion-item>
+              </ion-list>
+  
+  </ion-content>
